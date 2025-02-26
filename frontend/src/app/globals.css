@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* light-mode.css */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --radius: 10px;
+  /* --color-base: #f9fafb;
+  --color-primary: #3b82f6;
+  --color-secondary: #f97316; */
+
+  --color-base: #e0e0e0; /* 60% - Soft white with slight gray undertone */
+  --color-primary: #3b82f6; /* 30% - Vibrant blue */
+  --color-secondary: #f97316;
+
+  --sd-card: 10px 10px 20px #b4b4b4, -10px -10px 20px #ffffff;
+  --sd-inset: inset 4px 3px 3px 0px #b4b4b4, inset -2px -4px 4px 0px #ffffff;
+  --sd-button: 5px 5px 13px #b4b4b4, -5px -5px 13px #ffffff;
+}
+
+/* dark-mode.css */
+/* [data-theme="dark"] {
+  --color-base: #1f2937;
+  --color-primary: #06b6d4;
+  --color-secondary: #84cc16;
+} */
+
+/* body {
+  --color-base: #f9fafb;
+  --color-primary: #3b82f6;
+  --color-secondary: #f97316;
+} */
+
+:root:has(#dark) {
+  /* --color-base: #1f2937;
+  --color-primary: #06b6d4;
+  --color-secondary: #84cc16; */
+
+  --color-base: #1e293b; /* 60% - Deep blue-gray */
+  --color-primary: #60a5fa; /* 30% - Bright blue with higher luminosity */
+  --color-secondary: #fb923c;
+
+  --sd-card: 10px 10px 20px #1a2332, -10px -10px 20px #232f44;
+  --sd-inset: inset 4px 3px 3px 0px #1a2332, inset -2px -4px 4px 0px #232f44;
+  --sd-button: 5px 5px 13px #1a2332, -5px -5px 13px #232f44;
+}
+
+input {
+  /* border: unset; */
+  /* border: 2px solid var(--color-primary); */
+  background-color: transparent;
+  height: 2.5rem;
+  border-radius: 20px;
+  border-radius: 1.5rem;
+  padding: 0.75rem;
+}
+
+input:focus {
+  outline: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+} */
+
+/* @layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+} */
