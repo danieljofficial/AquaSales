@@ -10,8 +10,13 @@ export class SalesService {
   constructor(@Inject(DRIZZLE) private database: DrizzleDb) {}
 
   async findAll() {
-    const sales = await this.database.select().from(SalesTable);
-    console.log(sales);
+    const selectedColumns = {
+      id: SalesTable.id,
+      unitPrice: SalesTable.unitPrice,
+      revenue: SalesTable.revenue,
+      description: SalesTable.description,
+    };
+    const sales = await this.database.select(selectedColumns).from(SalesTable);
     return sales;
   }
 

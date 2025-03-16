@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import useThemeStore from "@/store/themes";
+import QueryProvider from "@/components/QueryProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,8 +25,10 @@ export default function RootLayout({
       </head>
       <body className="bg-base">
         <main className="flex">
-          <Sidebar />
-          {children}
+          <QueryProvider>
+            <Sidebar />
+            {children}
+          </QueryProvider>
         </main>
       </body>
     </html>

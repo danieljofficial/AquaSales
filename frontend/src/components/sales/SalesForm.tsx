@@ -2,9 +2,27 @@
 import React from "react";
 import { Calendar, Currency, ShoppingBag } from "lucide-react";
 import useThemeStore from "@/store/themes";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+
+// type Sales = {
+//   id: string;
+//   unitPrice: number;
+//   revenue: number;
+// };
+
+// async function fetchSales(): Promise<Sales[]> {
+//   const response = await fetch("http://localhost:5000/api/sales");
+//   return response.json();
+// }
 
 const SalesForm = () => {
   const { isDarkTheme } = useThemeStore();
+  const queryClient = useQueryClient();
+
+  // const { data, error, isLoading, isError } = useQuery({
+  //   queryKey: ["sales"],
+  //   queryFn: fetchSales,
+  // });
 
   return (
     <form
